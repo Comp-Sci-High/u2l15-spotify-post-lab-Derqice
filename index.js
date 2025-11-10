@@ -5,7 +5,7 @@
 // 1. Look through the Spotify API Documentation and find the end point for creating a playlist.
 // Update the variable below called `createPlaylistURL` and add the URL, the user_id will be 31s5fcbgzo3pkww6ancnzov63cjm
 
-let createPlaylistURL = "https://api.spotify.com/v1/user/31s5fcbgzo3pkww6ancnzov63cjm/playlists";
+let createPlaylistURL = "https://api.spotify.com/v1/users/31s5fcbgzo3pkww6ancnzov63cjm/playlists";
 
 // 2. The documentation describes how to create the request body. Using that information update the object below called `newPlaylistBody`
 // Add the name of the playlist, make sure it's public, and add a description with your name and section (+ whatever else you want)
@@ -29,7 +29,7 @@ async function createPlaylist(playlistData) {
   const options = {
     method: "POST",
     headers:{
-      Authorization: "Bearer ",
+      Authorization: "Bearer BQAq2e0s1VZMnYr7LAv0jXZ69P4tG9_jPCUOsFgCfeiHmHuuGyUgUkP8R3fU5HHppkxUFPd9IyZ8dAMTbztvb-pody47IAnNlsI3UNeSerPtvILifNfLAvG9ywOm9KzdMnnfGKPZhOr4ofTi_M3S7_k_WS_BBI2LkhNG4ofu4F1ARbFrMd8M34oa9uuuiNwV5Q8oX4QiCStZ_yZ7KlF-66VICBUnhQrnHWgNIkUCk6iomcxsjmPCA1WVe3scDOc44BoPdXl_vwdYOJclFXQWCA_oi9dmFNbQugJXHFIuUxQJ",
       "Content-Type": "application/json"
     },
     body: JSON.stringify(newPlaylistBody)
@@ -52,7 +52,7 @@ createPlaylist(newPlaylistBody)
 // 1. Look through the Spotify API Documentation and find the end point for adding songs to a playlist.
 // Update the variable below called `addingSongsURL` and add the URL, use the playlist_id that you recieved from the function above
 
-let addingSongsURL = "https://api.spotify.com/v1/playlists/(didn't get one because api key expired)/tracks";
+let addingSongsURL = "https://api.spotify.com/v1/playlists/14RcJguf1n6tgQhQTiuLv7/tracks";
 
 // 2. Find 4 songs on spotify and add them to the songs array below. (If spotify is blocked use the example below, or ask Mr.Castro)
 //    - The songs should be in the format: "spotify:track:<track_id>"
@@ -70,7 +70,7 @@ const songs = [
 // Add the array `songs` into this object
 
 const newSongsBody = {
-  playlist_id:"(didn't get one because api key expired)",
+  playlist_id:"14RcJguf1n6tgQhQTiuLv7",
   position:0,
   uris:songs,
 
@@ -88,7 +88,7 @@ async function addPlaylistSongs(songData) {
   const options = {
     method: "POST",
     headers: {
-      Authorization: "Bearer ",
+      Authorization: "Bearer BQAq2e0s1VZMnYr7LAv0jXZ69P4tG9_jPCUOsFgCfeiHmHuuGyUgUkP8R3fU5HHppkxUFPd9IyZ8dAMTbztvb-pody47IAnNlsI3UNeSerPtvILifNfLAvG9ywOm9KzdMnnfGKPZhOr4ofTi_M3S7_k_WS_BBI2LkhNG4ofu4F1ARbFrMd8M34oa9uuuiNwV5Q8oX4QiCStZ_yZ7KlF-66VICBUnhQrnHWgNIkUCk6iomcxsjmPCA1WVe3scDOc44BoPdXl_vwdYOJclFXQWCA_oi9dmFNbQugJXHFIuUxQJ",
       "Content-Type": "application/json"
     },
     body: JSON.stringify(newSongsBody)
